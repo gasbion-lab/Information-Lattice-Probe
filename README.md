@@ -29,7 +29,7 @@ The fundamental engine for mapping odd integers into the information lattice and
 Located in `/pencil-geometry`, this module implements **piecewise linear trajectories (spezzate)** to visualize topological corridors and reflexive symmetries.
 
 #### **Gasbion System: Focal Analysis Log Output**
-```text
+```
 ENGINE: MILLER-RABIN | FOCUS F(-0.5, -0.5)
 GEN: y = kx + (k-1)/2 | PENCIL PROJECTION
 ...................................................
@@ -41,8 +41,9 @@ GOLDBACH TARGET N: 1298074214633706907132624082305024
 p1 (SING.): 649037107316853453566312041147283
 p2 (SING.): 649037107316853453566312041157741
 ...................................................
-
+LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
+...................................................
+...................................................
+```
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
 
-
-LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
