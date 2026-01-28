@@ -1,23 +1,44 @@
-# Information-Lattice-Probe
-Official implementation of the Information Lattice Field Theory (ILFT) for deterministic prime density analysis. Includes the Gasbion-Riemann Probe.
-# Information Lattice Field Theory (ILFT) - Official Probe
+# Information Lattice Field Theory (ILFT) & Pencil Projections
+**Author:** Silvio Gabbianelli (gasbion-lab)  
+**Field:** Computational Number Theory, Information Physics, Projective Geometry
 
-This repository contains the computational framework and verification tools for the **Information Lattice Field Theory**, as presented in the paper: 
-**"Computational Analysis of a Mapping ϕ(n) for Prime Singularity Detection"**.
+---
 
-## 📄 Research Paper
-The full theory, including the formal proofs of the mapping $\phi(n) = (n-1)/2$ and the structural analysis of Goldbach and Riemann symmetries, is published and archived on Zenodo:
+## 🔬 Project Overview
+This repository hosts the **Information Lattice Probe**, a computational engine designed for the algorithmic implementation and formal documentation of the **Information Lattice Field Theory (ILFT)**. 
 
-**DOI:** [10.5281/zenodo.18378546](https://doi.org/10.5281/zenodo.18378546)
+The project provides a deterministic geometric framework to analyze prime singularities, offering new insights into the Riemann Hypothesis, the Twin Prime Conjecture, and Goldbach’s Conjecture. Through the mapping function $\phi(n) = \frac{n-1}{2}$ and the **Pencil Projection** methodology, prime distribution is analyzed as a result of structural rigidity within a discrete informational manifold (Modulo-12).
 
-## 🚀 The Gasbion-Riemann Probe
-The core of this repository is the `Probe.py` script, a high-performance verification tool designed to:
-* Map odd integers into the discrete information lattice $\mathcal{L}$.
-* Identify prime singularities through the exclusion of composite generating functions.
-* Verify prime density alignment with the Gram series at extreme depths ($10^{50}$ and beyond).
+---
 
-## 🛠 Installation & Usage
-```bash
-git clone [https://github.com/gasbion-lab/Information-Lattice-Probe.git](https://github.com/gasbion-lab/Information-Lattice-Probe.git)
-cd Information-Lattice-Probe
-python Probe.py
+## 📚 Scientific Publications
+If you use this research or code, please cite the following works:
+
+1. **The Unified Field of Singularities: Geometric Formalization via Pencil Projections** *Theorems 3.2 (Twin Primes) and 3.3 (Goldbach Reflexive Sum).* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18399848).svg)](https://doi.org/10.5281/zenodo.18399848)
+
+2. **Computational Analysis of a Mapping $\phi(n)$ for Prime Singularity Detection** *Foundational theory of the Information Lattice.* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18378546.svg)](https://doi.org/10.5281/zenodo.18378546)
+
+---
+
+## 🛠 Software Modules
+
+### 1. Lattice Core (The Original Probe)
+The fundamental engine for mapping odd integers into the information lattice and detecting singularities.
+
+### 2. Pencil Geometry (Advanced Piecewise Analysis)
+Located in `/pencil-geometry`, this module implements **piecewise linear trajectories (spezzate)** to visualize topological corridors and reflexive symmetries.
+
+#### **Gasbion System: Focal Analysis Log Output**
+```text
+ENGINE: MILLER-RABIN | FOCUS F(-0.5, -0.5)
+GEN: y = kx + (k-1)/2 | PENCIL PROJECTION
+...................................................
+RIEMANN DENSITY R(x) (Sector): 264.71
+ACTUAL SINGULARITIES FOUND: 243
+STRUCTURAL DEVIATION: -8.2031%
+...................................................
+GOLDBACH TARGET N: 1298074214633706907132624082305024
+p1 (SING.): 649037107316853453566312041147283
+p2 (SING.): 649037107316853453566312041157741
+...................................................
+LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
