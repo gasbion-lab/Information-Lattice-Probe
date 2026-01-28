@@ -14,7 +14,7 @@ The project provides a deterministic geometric framework to analyze prime singul
 ## 📚 Scientific Publications
 If you use this research or code, please cite the following works:
 
-1. **The Unified Field of Singularities: Geometric Formalization via Pencil Projections** *Theorems 3.2 (Twin Primes) and 3.3 (Goldbach Reflexive Sum).* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18399848).svg)](https://doi.org/10.5281/zenodo.18399848)
+1. **The Unified Field of Singularities: Geometric Formalization via Pencil Projections** *Theorems 3.2 (Twin Primes) and 3.3 (Goldbach Reflexive Sum).* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18399848.svg)](https://doi.org/10.5281/zenodo.18399848)
 
 2. **Computational Analysis of a Mapping $\phi(n)$ for Prime Singularity Detection** *Foundational theory of the Information Lattice.* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18378546.svg)](https://doi.org/10.5281/zenodo.18378546)
 
@@ -41,4 +41,8 @@ GOLDBACH TARGET N: 1298074214633706907132624082305024
 p1 (SING.): 649037107316853453566312041147283
 p2 (SING.): 649037107316853453566312041157741
 ...................................................
+
+![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
+
+
 LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
