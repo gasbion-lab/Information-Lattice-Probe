@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from matplotlib.widgets import Button
 from mpmath import mp, riemannr
-
+`# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)`
 mp.dps = 100 
 
 # --- 1. MOTORE DI CALCOLO: MILLER-RABIN ---
