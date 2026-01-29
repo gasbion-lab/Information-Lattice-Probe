@@ -4,10 +4,9 @@ from matplotlib.widgets import Button
 import numpy as np
 import textwrap
 from mpmath import mp, riemannr
-
+`# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)`
 # Configurazione mpmath per alta precisione
 mp.dps = 100 
-
 # --- 1. MOTORE DI CALCOLO (Miller-Rabin) ---
 def is_prime(n, k=10):
     if n <= 1: return False
@@ -132,3 +131,4 @@ def update(frame):
 
 ani = animation.FuncAnimation(fig, update, frames=(n_total*2)//750 + 60, interval=25, blit=True)
 plt.show()
+
