@@ -11,6 +11,19 @@ The project provides a deterministic geometric framework to analyze prime singul
 
 ---
 
+## 🛠 Interactive Exploration Tools
+
+The repository includes a suite of Python tools designed to visualize the geometric properties of the Information Lattice:
+
+* **Lattice Explorer**: A wide-sector probe to visualize prime distribution (S-Points) vs. composite projections (P-Projections) across extreme numerical ranges.
+* **Goldbach Reflexive Probe**: Demonstrates the reflexive symmetry of even targets $N$, identifying the $p_1, p_2$ pair as mirrored singularities within the M12 manifold.
+* **Twin Singularity Radar**: A local-scale analyzer focused on the structural distance between primes, ideal for studying Twin Prime persistence and lattice rigidity.
+
+### Quick Start
+To run the probes, ensure you have `numpy` and `matplotlib` installed:
+```bash
+python probes/GoldbachSymmetry.py
+
 ## 📚 Scientific Publications
 If you use this research or code, please cite the following works:
 
@@ -46,5 +59,6 @@ LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
 ......................................................
 ```
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
+
 
 
