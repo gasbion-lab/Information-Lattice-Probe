@@ -73,7 +73,14 @@ If you use this research or code, please cite the following works:
 
 ## 🛠 Software Modules
 
+### 📐 Pencil Projection Analysis
+The following visualization demonstrates the core mathematical engine of the ILFT. It maps the composite lines (Pencils) converging at the focal point $F(-0.5, -0.5)$ and the emergence of prime singularities along the informational corridors.
 
+* **Source Code:** [`PencilProjectionPlotter.py`](./pencil-geometry/PencilProjectionPlotter.py)
+* **Mathematical Basis:** $y = kx + \frac{k-1}{2}$
+
+![`PencilProjectionPlotter.png`](./pencil-geometry/gasbionRadar.png)
+*Figure 1: Structural map of the Information Lattice showing composite intersections and prime emergence.*
 
 ### 1. Lattice Core (The Original Probe)
 
@@ -122,6 +129,7 @@ LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
 ```
 
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
+
 
 
 
