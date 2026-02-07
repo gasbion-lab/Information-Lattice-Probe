@@ -71,6 +71,7 @@ If you use this research or code, please cite the following works:
 
 
 
+3. **Information Manifolds and Pencil Projections: Structural Rigidity and Symmetry Invariants in the Modulo-12 Prime Lattice** *Foundational theory of the Pencil Lattice Projections.* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18514560.svg)](https://doi.org/10.5281/zenodo.18514560)
 ---
 
 
@@ -151,6 +152,7 @@ LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
 ```
 
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
+
 
 
 
