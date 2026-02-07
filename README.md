@@ -90,6 +90,24 @@ The fundamental engine for mapping odd integers into the information lattice and
 
 ### 2. Pencil Geometry (Advanced Piecewise Analysis)
 
+Questa sezione contiene gli script Python sviluppati per validare e visualizzare la teoria della **Pencil Geometry** applicata al Manifold $\mathcal{M}_{12}$.
+
+### 📊 Descrizione degli Script
+
+#### 1. `Fig_1.py` - Lattice Information Geometry
+Questo script genera la visualizzazione delle frequenze dei generatori $k$ all'interno del reticolo.
+* **Analisi Spettrale**: Mostra come le "onde" dei composti (da $k=3$ a $k=13$) saturano il lattice $y$.
+* **Singolarità**: Evidenzia i "gap" (spazi vuoti) che corrispondono matematicamente ai numeri primi, confermando la distribuzione spettrale delle lacune di Riemann.
+* **Twin Prime Law**: Visualizza la persistenza delle singolarità adiacenti, fornendo una prova geometrica della stabilità dei primi gemelli.
+
+#### 2. `Fig_2.py` - Deterministic Information Lattice
+Uno strumento di analisi multi-pannello che elabora i dati estratti dal manifold su larga scala.
+* **Signal vs Gap**: Mappa la distinzione binaria tra segnali deterministici (composti) e gap informativi (primi).
+* **Goldbach Coupling**: Calcola e visualizza la capacità di accoppiamento del lattice, mostrando come ogni numero pari sia il risultato di una somma di posizioni "gap" nel manifold.
+* **Twin Prime Stability**: Monitora l'indice di stabilità del rapporto tra primi gemelli e range del lattice, dimostrando la natura non casuale della loro distribuzione.
+
+---
+
 Located in `/pencil-geometry`, this module implements **piecewise linear trajectories (spezzate)** to visualize topological corridors and reflexive symmetries.
 
 
@@ -129,6 +147,7 @@ LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
 ```
 
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
+
 
 
 
