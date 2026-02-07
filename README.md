@@ -1,5 +1,10 @@
 # Information Lattice Field Theory (ILFT) & Pencil Projections
 
+[![10.5281](https://zenodo.org)](https://doi.org)](https://doi.org/10.5281/zenodo.18448347)
+version 1.0.0
+
+[![10.5281](https://zenodo.org)](https://doi.org)](https://doi.org/10.5281/zenodo.18514629)
+version 1.1.0
 
 **Author:** Silvio Gabbianelli (gasbion-lab)
 
@@ -146,6 +151,7 @@ LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
 ```
 
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
+
 
 
 
