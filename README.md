@@ -72,10 +72,11 @@ If you use this research or code, please cite the following works:
 
 
 3. **Information Manifolds and Pencil Projections: Structural Rigidity and Symmetry Invariants in the Modulo-12 Prime Lattice** *Foundational theory of the Pencil Lattice Projections.* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18514560.svg)](https://doi.org/10.5281/zenodo.18514560)
+
+4. **Manifold Informativi e Proiezioni del Pencil: Rigidit`a Strutturale e Invarianti di
+Simmetria nel Reticolo dei Primi Modulo-12**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18724776.svg)](https://doi.org/10.5281/zenodo.18724776)
 ---
-
-
-
 ## 🛠 Software Modules
 
 ### 📐 Pencil Projection Analysis
@@ -91,11 +92,13 @@ The following visualization demonstrates the core mathematical engine of the ILF
 
 The fundamental engine for mapping odd integers into the information lattice and detecting singularities.
 
-
-
 ### 2. Pencil Geometry (Advanced Piecewise Analysis)
 
 Questa sezione contiene gli script Python sviluppati per validare e visualizzare la teoria della **Pencil Geometry** applicata al Manifold $\mathcal{M}_{12}$.
+
+### 3. Manifold 12 & Pencil
+
+La cartella principale [Manifold12Pencil](./Manifold12Pencil) contiene gli script Python utilizzati per la validazione empirica della teoria che descrive la rigidità strutturale e le invarianti di simmetria del sistemaper l'articolo "Manifold Informativi e Proiezioni del Pencil: Rigidità strutturale e Invarianti di Simmetria nel Reticolo dei Primi Modulo-12"
 
 ### 📊 Descrizione degli Script
 
@@ -110,6 +113,7 @@ Uno strumento di analisi multi-pannello che elabora i dati estratti dal manifold
 * **Signal vs Gap**: Mappa la distinzione binaria tra segnali deterministici (composti) e gap informativi (primi).
 * **Goldbach Coupling**: Calcola e visualizza la capacità di accoppiamento del lattice, mostrando come ogni numero pari sia il risultato di una somma di posizioni "gap" nel manifold.
 * **Twin Prime Stability**: Monitora l'indice di stabilità del rapporto tra primi gemelli e range del lattice, dimostrando la natura non casuale della loro distribuzione.
+
 
 ---
 
@@ -152,6 +156,7 @@ LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
 ```
 
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
+
 
 
 
