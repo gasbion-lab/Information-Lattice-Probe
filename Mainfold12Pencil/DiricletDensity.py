@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import random
+import math
 
 def is_prime_miller_rabin(n, k_test=20):
     n = int(n)
@@ -21,16 +22,19 @@ def is_prime_miller_rabin(n, k_test=20):
         else: return False
     return True
 
-# --- 1. CONFIGURAZIONE ---
-print("\n" + "="*50)
-print("   MANIFOLD PROBE v4.8 - STATISTICA DI DIRICHLET")
-print("="*50)
-u_start = input("Posizione p di partenza (Es. 2**201): ")
-p_orig = int(eval(u_start))
+# --- 1. CONFIGURAZIONE GEOMETRICA ---
+print("\n" + "="*55)
+print("   MANIFOLD PROBE v4.9 - DIRICHLET INVARIANCE TEST")
+print("="*55)
+u_start = input("Coordinata Settore (Es. 2**201 o 10**100): ")
+try:
+    p_orig = int(eval(u_start))
+except:
+    p_orig = 10**20
 scan_size = 5000 
 
-# --- 2. SCANSIONE ---
-print(f"Analisi statistica su {scan_size} posizioni...")
+# --- 2. SCANSIONE DEI CORRIDOI ---
+print(f"Analisi invarianza su {scan_size} stati del lattice...")
 counts = {1: 0, 5: 0, 7: 0, 11: 0}
 punti_grafico = []
 
@@ -45,32 +49,37 @@ for p in range(p_orig, p_orig + scan_size):
 
 total_p = sum(counts.values())
 
-# --- 3. REPORT TESTUALE ---
-print("\n" + "-"*40)
-print(f"DISTRIBUZIONE NEI CORRIDOI (DIRICHLET)")
-print("-" * 40)
+# --- 3. VERIFICA EQUIDISTRIBUZIONE ---
+print("\n" + "-"*45)
+print(f"INVARIANZA NEI CANALI (MODULO 12)")
+print("-" * 45)
 for r in [1, 5, 7, 11]:
     perc = (counts[r] / total_p * 100) if total_p > 0 else 0
-    print(f"Resto {r:2d} mod 12: {counts[r]:4d} superstiti ({perc:.2f}%)")
-print("-" * 40)
-print(f"Densità totale: {total_p}/{scan_size} ({total_p/scan_size:.4f})")
+    status = "OK" if 20 < perc < 30 else "VAR"
+    print(f"Canale {r:2d} mod 12: {counts[r]:4d} superstiti ({perc:.2f}%) [{status}]")
+print("-" * 45)
+print(f"Densità Totale Residua: {total_p/scan_size:.5f}")
 
-# --- 4. VISUALIZZAZIONE ---
+# --- 4. VISUALIZZAZIONE DELLA RIGIDITÀ ---
 plt.figure(figsize=(15, 7), facecolor='white')
 mappa_y = {5: 1, 7: 2, 11: 4, 1: 5}
 ampiezza_vista = 100
 
-for p, r in punti_grafico:
-    if p < p_orig + ampiezza_vista:
-        plt.scatter(p - p_orig, mappa_y[r], edgecolors='lime', facecolors='none', s=100, linewidth=2, zorder=5)
-
+# Plotting dei punti di singolarità (Lime) e ostruzioni (Red)
 for p in range(p_orig, p_orig + ampiezza_vista):
     r12 = (2*p + 1) % 12
-    if r12 in mappa_y and not is_prime_miller_rabin(2*p+1):
-        plt.scatter(p - p_orig, mappa_y[r12], color='red', s=30, alpha=0.4)
+    if r12 in mappa_y:
+        x_pos = p - p_orig
+        if is_prime_miller_rabin(2*p + 1):
+            plt.scatter(x_pos, mappa_y[r12], edgecolors='lime', facecolors='none', 
+                        s=120, linewidth=2, zorder=5, label='Singolarità' if x_pos==0 else "")
+        else:
+            plt.scatter(x_pos, mappa_y[r12], color='red', s=40, alpha=0.3, 
+                        marker='x', label='Ostruzione Pencil' if x_pos==0 else "")
 
-plt.title(f"ANALISI MANIFOLD: {p_orig:.2e}\nDistribuzione Dirichlet (Attesa: 25% per corridoio)")
-plt.yticks([1, 2, 4, 5], ["Resto 5", "Resto 7", "Resto 11", "Resto 1"])
-plt.xlabel("Offset locale (0-100)")
-plt.grid(True, axis='x', linestyle=':', alpha=0.3)
+plt.title(f"MANIFOLD 12: Equidistribuzione Asintotica (Settore 10^{int(math.log10(p_orig))})\nInvarianza di Dirichlet: Canali bilanciati al ~25%")
+plt.yticks([1, 2, 4, 5], ["Canale 5", "Canale 7", "Canale 11", "Canale 1"])
+plt.xlabel(f"Offset dal punto di analisi (Base: {p_orig:.2e})")
+plt.grid(True, axis='both', linestyle=':', alpha=0.3)
+plt.ylim(0.5, 5.5)
 plt.show()
