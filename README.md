@@ -6,6 +6,8 @@ version 1.0.0
 [![10.5281](https://zenodo.org)](https://doi.org)](https://doi.org/10.5281/zenodo.18514629)
 version 1.1.0
 
+[![10.5281](https://zenodo.org)](https://doi.org)](https://doi.org/10.5281/zenodo.19131581)
+
 **Author:** Silvio Gabbianelli (gasbion-lab)
 
 
@@ -76,6 +78,9 @@ If you use this research or code, please cite the following works:
 4. **Manifold Informativi e Proiezioni del Pencil: Rigidit`a Strutturale e Invarianti di
 Simmetria nel Reticolo dei Primi Modulo-12**
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18724776.svg)](https://doi.org/10.5281/zenodo.18724776)
+
+5. **Technical Note: Harmonic Phase Selection in Manifold 12 via Arcsine Transformation for Large-Scale Primality Searches**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19131581.svg)](https://doi.org/10.5281/zenodo.19131581))
 ---
 ## 🛠 Software Modules
 
@@ -86,6 +91,7 @@ The following visualization demonstrates the core mathematical engine of the ILF
 * **Mathematical Basis:** $y = kx + \frac{k-1}{2}$
 
 ![`PencilProjectionPlotter.png`](./pencil-geometry/PencilProjectionPlotter.png)
+
 *Figure 1: Structural map of the Information Lattice showing composite intersections and prime emergence.*
 
 ### 1. Lattice Core (The Original Probe)
@@ -99,6 +105,10 @@ Questa sezione contiene gli script Python sviluppati per validare e visualizzare
 ### 3. Manifold 12 & Pencil
 
 La cartella principale [Manifold12Pencil](./Manifold12Pencil) contiene gli script Python utilizzati per la validazione empirica della teoria che descrive la rigidità strutturale e le invarianti di simmetria del sistemaper l'articolo "Manifold Informativi e Proiezioni del Pencil: Rigidità strutturale e Invarianti di Simmetria nel Reticolo dei Primi Modulo-12"
+
+### 4. Technical Note: Variable Phase Probe
+
+A differenza degli algoritmi di ricerca lineare, questo strumento utilizza il targeting di risonanza dell'arcoseno (ART) per identificare "corridoi di densità" ad alta probabilità all'interno del campo modulare di 180. Sincronizzando la ricerca con specifici offset modulari e intensità di fase (Phi), il motore raggiunge una riduzione del rumore computazionale di oltre il 99,36%, concentrando la verifica di Miller-Rabin solo sui candidati risonanti.
 
 ### 📊 Descrizione degli Script
 
@@ -114,11 +124,14 @@ Uno strumento di analisi multi-pannello che elabora i dati estratti dal manifold
 * **Goldbach Coupling**: Calcola e visualizza la capacità di accoppiamento del lattice, mostrando come ogni numero pari sia il risultato di una somma di posizioni "gap" nel manifold.
 * **Twin Prime Stability**: Monitora l'indice di stabilità del rapporto tra primi gemelli e range del lattice, dimostrando la natura non casuale della loro distribuzione.
 
-
----
-
 Located in `/pencil-geometry`, this module implements **piecewise linear trajectories (spezzate)** to visualize topological corridors and reflexive symmetries.
 
+#### 3. `VariablePhaseProbe.py` - Variable Information Lattice
+Il modulo VariablePhaseProbe è uno strumento di analisi dinamica progettato per mappare la distribuzione delle costellazioni di primi (gemelli, triplette e quadruplette) al variare della fase di risonanza Phi.A differenza della ricerca a fase fissa, questo script esegue una scansione multi-fase, permettendo di identificare quali specifici angoli di oscillazione della funzione Arcoseno-Seno siano correlati alla massima densità di numeri primi nel Manifold 12.
+
+Located in `/Manifold 12 & Pencil`, this module implements **Variable Phase Prime Research** to find topological corridors free from K lines of the Pencil.
+
+---
 
 
 #### **Gasbion System: Focal Analysis Log Output**
