@@ -129,7 +129,7 @@ Located in `/pencil-geometry`, this module implements **piecewise linear traject
 #### 3. `VariablePhaseProbe.py` - Variable Information Lattice
 Il modulo VariablePhaseProbe è uno strumento di analisi dinamica progettato per mappare la distribuzione delle costellazioni di primi (gemelli, triplette e quadruplette) al variare della fase di risonanza Phi.A differenza della ricerca a fase fissa, questo script esegue una scansione multi-fase, permettendo di identificare quali specifici angoli di oscillazione della funzione Arcoseno-Seno siano correlati alla massima densità di numeri primi nel Manifold 12.
 
-Located in `/Manifold 12 & Pencil`, this module implements **Variable Phase Prime Research** to find topological corridors free from K lines of the Pencil.
+Located in `/Manifold12Pencil`, this module implements **Variable Phase Prime Research** to find topological corridors free from K lines of the Pencil
 
 ---
 
