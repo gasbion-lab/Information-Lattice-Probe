@@ -81,6 +81,9 @@ Simmetria nel Reticolo dei Primi Modulo-12**
 
 5. **Technical Note: Harmonic Phase Selection in Manifold 12 via Arcsine Transformation for Large-Scale Primality Searches**
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19131581.svg)](https://doi.org/10.5281/zenodo.19131581))
+
+6. **Technical Note: Spectral Correlations and GUE Statistics of Twin Prime Distributions within Manifold 12**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19315288.svg)](https://doi.org/10.5281/zenodo.19315288))
 ---
 ## 🛠 Software Modules
 
@@ -110,6 +113,10 @@ La cartella principale [Manifold12Pencil](./Manifold12Pencil) contiene gli scrip
 
 A differenza degli algoritmi di ricerca lineare, questo strumento utilizza il targeting di risonanza dell'arcoseno (ART) per identificare "corridoi di densità" ad alta probabilità all'interno del campo modulare di 180. Sincronizzando la ricerca con specifici offset modulari e intensità di fase (Phi), il motore raggiunge una riduzione del rumore computazionale di oltre il 99,36%, concentrando la verifica di Miller-Rabin solo sui candidati risonanti.
 
+### 5. Technical Note: Manifold12_Z
+
+A differenza degli algoritmi di ricerca lineare, questo strumento utilizza il targeting degli zeri non banali della funzione Z di Riemann per identificare "corridoi di densità" ad alta probabilità all'interno del campo modulare di 180. Sincronizzando la ricerca con specifici offset modulari, il motore concentra la verifica di Miller-Rabin solo sui candidati risonanti mostrando in grafico la relazione con la GUE.
+
 ### 📊 Descrizione degli Script
 
 #### 1. `Fig_1.py` - Lattice Information Geometry
@@ -130,6 +137,11 @@ Located in `/pencil-geometry`, this module implements **piecewise linear traject
 Il modulo VariablePhaseProbe è uno strumento di analisi dinamica progettato per mappare la distribuzione delle costellazioni di primi (gemelli, triplette e quadruplette) al variare della fase di risonanza Phi.A differenza della ricerca a fase fissa, questo script esegue una scansione multi-fase, permettendo di identificare quali specifici angoli di oscillazione della funzione Arcoseno-Seno siano correlati alla massima densità di numeri primi nel Manifold 12.
 
 Located in `/Manifold12Pencil`, this module implements **Variable Phase Prime Research** to find topological corridors free from K lines of the Pencil
+
+#### 4. `Manifold12_Z.py` - Riemann Z zeros correlate research
+Il modulo Mainfold12_Z è uno strumento di analisi dinamica progettato per mappare la distribuzione delle costellazioni di primi gemelli,  al variare della fase di risonanza con gli n zeri non banali della funzione Z di Riemann, permettendo di identificare quali specifici elementi del Manifold12 siano correlati alla massima densità di numeri primi gemelli in confronto con la statistica GUE.
+
+Located in `/Manifold12Pencil`, this module implements **Riemann Z zeros correlate research** to find Mainfold12 Twins Prime Elements fittings with GUE graphic function
 
 ---
 
