@@ -73,7 +73,7 @@ If you use this research or code, please cite the following works:
 
 
 
-3. **Information Manifolds and Pencil Projections: Structural Rigidity and Symmetry Invariants in the Modulo-12 Prime Lattice** *Foundational theory of the Pencil Lattice Projections.* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18514560.svg)](https://doi.org/10.5281/zenodo.18514560)
+3. **Information Manifolds and Pencil Projections: Structural Rigidity and Symmetry Invariants in the Modulo-12 Prime Lattice** *Foundational theory of the Pencil Lattice Projections.* [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19458069.svg)](https://doi.org/10.5281/zenodo.19458069)
 
 4. **Manifold Informativi e Proiezioni del Pencil: Rigidit`a Strutturale e Invarianti di
 Simmetria nel Reticolo dei Primi Modulo-12**
