@@ -8,7 +8,7 @@ version 1.1.0
 
 [![10.5281](https://zenodo.org)](https://doi.org)](https://doi.org/10.5281/zenodo.19131581)
 
-**Author:** Silvio Gabbianelli (gasbion-lab)
+**Author:** Silvio Gabbianelli (gasbion-lab)(ORCID: [0009-0007-3329-5270](https://orcid.org/0009-0007-3329-5270))
 
 
 **Field:** Computational Number Theory, Information Physics, Projective Geometry
