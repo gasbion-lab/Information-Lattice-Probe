@@ -8,7 +8,8 @@ version 1.1.0
 
 [![10.5281](https://zenodo.org)](https://doi.org)](https://doi.org/10.5281/zenodo.19131581)
 
-**Author:** Silvio Gabbianelli (gasbion-lab)(ORCID: [0009-0007-3329-5270](https://orcid.org/0009-0007-3329-5270))
+**Author:** Silvio Gabbianelli (gasbion-lab)  [![ORCID](https://img.shields.io/badge/ORCID-0009--0007--3329--5270-A6CE39?logo=orcid&logoColor=white)](https://orcid.org/0009-0007-3329-5270)
+
 
 
 **Field:** Computational Number Theory, Information Physics, Projective Geometry
@@ -183,7 +184,13 @@ LINES: M12 Piecewise | RED: Pencil | MAGENTA: Goldbach
 ![Pencil Projection Analysis](pencil-geometry/gasbionRadar.png)
 
 
+---
+## Citation
+If you find this research or the Manifold 12 framework useful, please cite it as:
 
+**Gabbianelli, S. (2026).** *Information Manifolds and Pencil Projections: Structural Rigidity and Symmetry Invariants in the Prime Lattice Modulo-12 (Version 2.2.1).* Zenodo. DOI: [10.5281/zenodo.19458069](https://doi.org/10.5281/zenodo.19458069)
+
+**Author ORCID:** [0009-0007-3329-5270](https://orcid.org/0009-0007-3329-5270)
 
 
 
