@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import random
 import math
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def is_prime_miller_rabin(n, k_test=20):
     n = int(n)
     if n <= 1: return False
