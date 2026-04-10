@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes, mark_inset
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 # 1. Data Configuration (Manifold 12 - Binary B)
 x_log = np.array([6, 10, 14, 18])
 x_val = 10**x_log
