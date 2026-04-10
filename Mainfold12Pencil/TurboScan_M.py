@@ -1,5 +1,5 @@
 import random
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def is_prime(n, k=25): 
     if n < 2: return False
     if n == 2 or n == 3: return True
