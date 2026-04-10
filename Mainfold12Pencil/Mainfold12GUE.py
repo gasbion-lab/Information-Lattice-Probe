@@ -3,7 +3,7 @@ import math
 import time
 import matplotlib.pyplot as plt
 import numpy as np
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 # --- MOTORE DI CALCOLO ---
 def miller_rabin(n, k=40):
     if n <= 1: return False
