@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 # 1. DEFINIZIONE DEL RANGE (Distanza P)
 # Estendiamo il range per mostrare la proiezione verso scale trans-computazionali
 x = np.logspace(7.1, 100, 1000) # Proiezione fino al Googol (10^100)
