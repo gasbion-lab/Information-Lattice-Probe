@@ -1,5 +1,5 @@
 import math
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def check_manifold_stability(n_scale, window_size, found_twins):
     """
     Valida la stabilità del Manifold 12 confrontando i dati empirici 
@@ -7,7 +7,7 @@ def check_manifold_stability(n_scale, window_size, found_twins):
     """
     # Costanti Teoriche
     C2 = 0.6601618158  # Costante di Hardy-Littlewood
-    REFERENCE_POROSITY = 0.3375  # Porosità strutturale target (%)
+    REFERENCE_POROSITY = 0.003375  # Porosità strutturale target (%)
 
     # 1. Calcolo Densità Analitica (Hardy-Littlewood)
     # La densità teorica locale vicino a N è 2 * C2 / ln(N)^2
@@ -15,7 +15,7 @@ def check_manifold_stability(n_scale, window_size, found_twins):
     theoretical_density = (2 * C2) / (ln_n**2)
     
     # 2. Calcolo Porosità Grezza vs Porosità Strutturale
-    # La porosità grezza è quella rilevata nella finestra (es. il tuo 14.25%)
+    # La porosità grezza è quella rilevata nella finestra 
     # La porosità strutturale è il limite asintotico di invarianza del Manifold.
     raw_window_porosity = (found_twins * 2) / window_size * 100 # Stima basata sui gemelli
 
@@ -52,6 +52,6 @@ check_manifold_stability(20000, 20000, 295)
 
 print("\n")
 
-# Test 2: Scala Googol (10^100) - Basato sul tuo scan
+# Test 2: Scala Googol (10^100) 
 # Nota: Usiamo la finestra di 20.000 sopra la base 10^100
 check_manifold_stability(10**100, 20000, 65)
