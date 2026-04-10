@@ -1,6 +1,6 @@
 import numpy as np
 import math
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def stress_test_manifold12(start_p, window_size=500000):
     # Usiamo math.log10 invece di np.log10 per gestire interi giganti (10^100)
     esponente = int(math.log10(start_p))
