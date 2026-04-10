@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def visualizza_geometria_reticolo(limit_y, max_k):
     plt.figure(figsize=(12, 8))
     
