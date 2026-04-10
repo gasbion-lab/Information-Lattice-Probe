@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def generate_lattice_final_v2():
     limit_x = 12
     limit_y = 35 
