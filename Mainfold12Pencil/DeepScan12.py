@@ -1,5 +1,5 @@
 import math
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def deep_scan_manifold12(start_p, window_size=200000):
     # Gestione sicura della scala logaritmica per scale trans-computazionali
     esponente = int(math.log10(start_p))
