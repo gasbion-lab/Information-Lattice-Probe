@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def generate_lattice(limit):
     lattice = np.zeros(limit + 1, dtype=int)
     for k in range(3, int(2 * limit**0.5) + 3, 2):
