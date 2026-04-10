@@ -1,6 +1,6 @@
 import random
 import time
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def miller_rabin(n, k=27):
     if n < 2: return False
     if n % 2 == 0: return False
