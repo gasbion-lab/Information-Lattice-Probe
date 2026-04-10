@@ -3,7 +3,7 @@ import numpy as np
 import textwrap
 import sympy
 import matplotlib
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 # Backend per stabilità su macOS
 matplotlib.use('TkAgg') 
 
