@@ -1,7 +1,7 @@
 import math
 import random
 import time
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def miller_rabin(n, k=50): # Maximum precision for laboratory-grade testing
     if n <= 1: return False
     if n <= 3: return True
