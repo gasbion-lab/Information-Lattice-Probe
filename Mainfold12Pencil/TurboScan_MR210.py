@@ -1,7 +1,7 @@
 import random
 import time
 import matplotlib.pyplot as plt
-
+# Developed by Gasbion-lab | Part of the Information Lattice Field Theory (ILFT)
 def miller_rabin(n, k=7):
     if n < 2: return False
     if n % 2 == 0: return False
