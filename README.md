@@ -159,7 +159,7 @@ L'algoritmo integrato simula un **Lettore Ottico Digitale ad Alta Velocità** ca
 * **Mappatura degli Intorni Multi-Pannello:** Ottimizzazione grafica per numeri astronomici. Il sistema calcola le collisioni ed evidenzia esclusivamente una finestra di vicinato locale ($\pm 3$ pixel) attorno ad ogni LED attivo, azzerando i tempi di calcolo visivo di Matplotlib.
 * **Selettore Aritmetico Spettrale:** Discriminazione cromatica deterministica tra pendenze stabili prime (**LED Azzurro**) e pendenze composte (**LED Giallo**).
 
-Located in `/Manifold12Pencil`
+Located in `/Manifold12Pencil` as ScannerAnamorfico.py
 
 #### **Gasbion System: Focal Analysis Log Output**
 
