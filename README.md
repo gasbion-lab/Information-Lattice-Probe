@@ -85,7 +85,10 @@ Simmetria nel Reticolo dei Primi Modulo-12**
 
 6. **Technical Note: Spectral Correlations and GUE Statistics of Twin Prime Distributions within Manifold 12**
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19315288.svg)](https://doi.org/10.5281/zenodo.19315288))
----
+
+7. **Computazione Geometrica Discreta: Scansione Anamorfica e Mappatura Digitale di un Fascio di Rette Quantizzato**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20621567.svg)](https://doi.org/10.5281/zenodo.20621567)---
+
 ## 🛠 Software Modules
 
 ### 📐 Pencil Projection Analysis
@@ -117,6 +120,10 @@ A differenza degli algoritmi di ricerca lineare, questo strumento utilizza il ta
 ### 5. Technical Note: Manifold12_Z
 
 A differenza degli algoritmi di ricerca lineare, questo strumento utilizza il targeting degli zeri non banali della funzione Z di Riemann per identificare "corridoi di densità" ad alta probabilità all'interno del campo modulare di 180. Sincronizzando la ricerca con specifici offset modulari, il motore concentra la verifica di Miller-Rabin solo sui candidati risonanti mostrando in grafico la relazione con la GUE.
+### 6. Computazione Geometrica Discreta
+
+L'algoritmo integrato simula un **Lettore Ottico Digitale ad Alta Velocità** capace di esplorare lo spazio delle pendenze ad altissime quote $H$ senza saturazione della memoria, applicando una focalizzazione adattiva sugli intorni di collisione.
+
 
 ### 📊 Descrizione degli Script
 
@@ -145,7 +152,14 @@ Il modulo Mainfold12_Z è uno strumento di analisi dinamica progettato per mappa
 Located in `/Manifold12Pencil`, this module implements **Riemann Z zeros correlate research** to find Mainfold12 Twins Prime Elements fittings with GUE graphic function
 
 ---
+#### 5. `Computazione Geometrica Discreta
+L'algoritmo integrato simula un **Lettore Ottico Digitale ad Alta Velocità** capace di esplorare lo spazio delle pendenze ad altissime quote $H$ senza saturazione della memoria, applicando una focalizzazione adattiva sugli intorni di collisione:
 
+* **Scansione Anamorfica Adattiva:** Dilatazione dell'asse $X$ e contrazione dell'asse $Y$ per intersecare la quota costante $2H+1 = M$.
+* **Mappatura degli Intorni Multi-Pannello:** Ottimizzazione grafica per numeri astronomici. Il sistema calcola le collisioni ed evidenzia esclusivamente una finestra di vicinato locale ($\pm 3$ pixel) attorno ad ogni LED attivo, azzerando i tempi di calcolo visivo di Matplotlib.
+* **Selettore Aritmetico Spettrale:** Discriminazione cromatica deterministica tra pendenze stabili prime (**LED Azzurro**) e pendenze composte (**LED Giallo**).
+
+Located in `/Manifold12Pencil`
 
 #### **Gasbion System: Focal Analysis Log Output**
 
