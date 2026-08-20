@@ -30,96 +30,122 @@ def miller_rabin(n, k=5):
             return False
     return True
 
-def scansiona_e_genera_intorni_led(H):
+def scansiona_fascio_rette(H):
     M = 2 * H + 1
-    print(f"\n--- ANALISI QUOTA H = {H} (M = {M}) ---")
+    sqrt_H = math.sqrt(H)
+    sqrt_M = math.sqrt(M)
     
-    # 1. CONTROLLO PRELIMINARE: Se M è primo, evitiamo calcoli a vuoto
+    print(f"\n--- ANALISI GEOMETRICA CON FASCIO DI RETTE ---")
+    print(f"Quota H = {H} (sqrt(H) = {sqrt_H:.2f})")
+    print(f"M = 2H + 1 = {M} (sqrt(M) = {sqrt_M:.2f})")
+    
     if miller_rabin(M):
-        print(f"[INFO] M = {M} è un numero PRIMO. Non esistono fattori non banali.")
+        print(f"[INFO] M = {M} è un numero PRIMO. Nessuna intersezione geometrica interna.")
         return
 
-    print("[INFO] Il numero è composto. Avvio ricerca intersezioni geometriche...")
-    colore_pixel = {}
+    print("[INFO] Scansione delle intersezioni del fascio di rette basata su sqrt(H)...")
+    tutti_i_punti = []
     
-    # 2. Ricerca dei divisori vincolati al Modulo 6
-    for i in range(1, int(math.sqrt(M)) + 1, 2):
-        if M % i == 0:
-            divisori = [i, M // i]
-            for denominatore in divisori:
-                if denominatore == 1 or denominatore == M:
-                    continue
-                
-                resto = denominatore % 6
-                if resto == 1 or resto == 5 or denominatore <= 5:
-                    x = (denominatore - 1) // 2
-                    k = M // denominatore
-                    if k > 0:
-                        es_primo = miller_rabin(k)
-                        tipo_resto = "+1" if resto == 1 else ("+5" if resto == 5 else "base")
-                        colore_pixel[x] = (k, es_primo, tipo_resto)
-                        print(f"[INTERSEZIONE X={x}] Divisore={denominatore} (Mod 6: {resto}) -> Pendenza k = {k} (Primo: {es_primo})")
+    # Limite di X basato sulla radice di H (o esteso per coprire l'intervallo geometrico)
+    limite_x = int(sqrt_H) * 2 + 10
+    
+    limite_M = int(sqrt_M)
+    for x in range(1, limite_M + 1):
+        p1 = 2 * x + 1
+        if M % p1 == 0:
+            q1 = M // p1
+            
+            primo_p1 = miller_rabin(p1)
+            primo_q1 = miller_rabin(q1)
+            
+            resto = p1 % 6
+            tipo_resto = "+1" if resto == 1 else ("+5" if resto == 5 else "base")
+            
+            tutti_i_punti.append({
+                'x': x,
+                'p1': p1,
+                'primo_p1': primo_p1,
+                'q1': q1,
+                'primo_q1': primo_q1,
+                'tipo_resto': tipo_resto
+            })
 
-    if not colore_pixel: 
-        print("[INFO] Nessun fattore trovato che rispetti il filtro geometrico del modulo 6.")
+    if not tutti_i_punti: 
+        print("[INFO] Nessuna intersezione geometrica trovata.")
         return
 
-    coordinate_attive = sorted(list(colore_pixel.keys()))
-    num_collisioni = len(coordinate_attive)
+    num_collisioni = len(tutti_i_punti)
+    print(f"[INFO] Trovate {num_collisioni} intersezioni geometriche. Apertura grafico...")
+    
+    
+    for p in tutti_i_punti:
+        print(f"  -> X={p['x']} | 2x+1 = {p['p1']} | Simmetrico k = {p['q1']}")
 
     import matplotlib.pyplot as plt
 
-    # --- GENERATORE DI MATRICE GRAFICA MULTI-RIGA PER EVITARE SOVRAPPOSIZIONI ---
     cols = min(6, num_collisioni)
     rows = math.ceil(num_collisioni / cols)
 
-    fig, assi = plt.subplots(rows, cols, squeeze=False, figsize=(3.5 * cols, 2.8 * rows))
-    fig.subplots_adjust(wspace=0.4, hspace=0.7)
+    fig, assi = plt.subplots(rows, cols, squeeze=False, figsize=(3.8 * cols, 3.2 * rows))
+    fig.subplots_adjust(wspace=0.4, hspace=0.8)
 
     assi_piatti = assi.flatten()
 
-    for idx, x_target in enumerate(coordinate_attive):
+    for idx, p in enumerate(tutti_i_punti):
         ax = assi_piatti[idx]
-        k, es_primo, tipo_resto = colore_pixel[x_target]
-        colore_led = '#00E5FF' if es_primo else '#FFEA00' # Azzurro (Primo) o Giallo (Composto)
+        x_target = p['x']
+        p1 = p['p1']
+        q1 = p['q1']
+        primo_p1 = p['primo_p1']
+        primo_q1 = p['primo_q1']
+        tipo_resto = p['tipo_resto']
+        
+        colore_led_p1 = '#00E5FF' if primo_p1 else '#FFEA00'
+        colore_led_q1 = '#00E5FF' if primo_q1 else '#FFEA00'
         
         intorno_min = x_target - 3
         intorno_max = x_target + 3
         
-        sfondo = plt.Rectangle((intorno_min - 0.5, -0.4), 7, 0.8, facecolor='black', edgecolor='none', zorder=1)
-        ax.add_patch(sfondo)
+        sfondo_sup = plt.Rectangle((intorno_min - 0.5, 0.1), 7, 0.7, facecolor='black', edgecolor='none', zorder=1)
+        sfondo_inf = plt.Rectangle((intorno_min - 0.5, -0.8), 7, 0.7, facecolor='black', edgecolor='none', zorder=1)
+        ax.add_patch(sfondo_sup)
+        ax.add_patch(sfondo_inf)
         
         for x_intorno in range(intorno_min, intorno_max + 1):
             if x_intorno == x_target:
-                rect = plt.Rectangle((x_intorno - 0.4, -0.4), 0.8, 0.8, facecolor=colore_led, edgecolor='white', linewidth=1.5, zorder=2)
-                ax.add_patch(rect)
-                
-                testo_k = f"{k}" if k < 1000000 else f"{k:.3e}"
-                # Testo disposto su più righe per leggibilità pulita
-                ax.text(x_target, 0.55, f'X={x_target}\nk={testo_k}\n(M6:{tipo_resto})', ha='center', va='bottom', 
-                       fontsize=6.5, fontweight='bold', color='black',
-                       bbox=dict(boxstyle='round,pad=0.2', facecolor='white', alpha=0.9), zorder=3)
+                rect_sup = plt.Rectangle((x_intorno - 0.4, 0.15), 0.8, 0.6, facecolor=colore_led_p1, edgecolor='white', linewidth=1.2, zorder=2)
+                ax.add_patch(rect_sup)
+                rect_inf = plt.Rectangle((x_intorno - 0.4, -0.75), 0.8, 0.6, facecolor=colore_led_q1, edgecolor='white', linewidth=1.2, zorder=2)
+                ax.add_patch(rect_inf)
             else:
-                rect = plt.Rectangle((x_intorno - 0.4, -0.4), 0.8, 0.8, facecolor='black', edgecolor='#333333', linewidth=0.5, zorder=1)
-                ax.add_patch(rect)
+                rect_sup = plt.Rectangle((x_intorno - 0.4, 0.15), 0.8, 0.6, facecolor='black', edgecolor='#333333', linewidth=0.4, zorder=1)
+                rect_inf = plt.Rectangle((x_intorno - 0.4, -0.75), 0.8, 0.6, facecolor='black', edgecolor='#333333', linewidth=0.4, zorder=1)
+                ax.add_patch(rect_sup)
+                ax.add_patch(rect_inf)
+
+        testo_p1 = f"{p1}" if p1 < 1000000 else f"{p1:.2e}"
+        testo_q1 = f"{q1}" if q1 < 1000000 else f"{q1:.2e}"
+        
+        ax.text(x_target, 1.0, f'X={x_target} (M6:{tipo_resto})\n2x+1={testo_p1}\nk={testo_q1}', ha='center', va='bottom', 
+               fontsize=6, fontweight='bold', color='black',
+               bbox=dict(boxstyle='round,pad=0.25', facecolor='white', alpha=0.95), zorder=3)
 
         ax.set_xlim(intorno_min - 0.6, intorno_max + 0.6)
-        ax.set_ylim(-1, 2.6)
+        ax.set_ylim(-1.3, 2.7)
         ax.get_yaxis().set_visible(False)
         ax.set_aspect('equal')
         
         ax.set_xticks([x_target])
         ax.tick_params(axis='x', labelsize=7)
 
-    # Nascondiamo eventuali celle vuote se la griglia in eccesso
     for j in range(num_collisioni, len(assi_piatti)):
         assi_piatti[j].set_visible(False)
 
-    plt.suptitle(f'Intersezioni Geometriche X e Pendenze K (Modulo 6) alla Quota H={H}\n[AZZURRO = K Primo (Miller-Rabin) | GIALLO = K Composto]', fontsize=9, y=0.98)
+    plt.suptitle(f'Intersezioni del Fascio di Rette alla Quota H={H}\n[Superiore = 2x+1 | Inferiore = Simmetrico k | AZZURRO = Primo, GIALLO = Composto]', fontsize=9, y=0.98)
     plt.show()
 
 def main():
-    print("=== SCANNER GEOMETRICO MODULO 6 (CLI Mode) ===")
+    print("=== SCANNER GEOMETRICO ===")
     while True:
         try:
             input_utente = input("\nInserisci la quota H (o scrivi 'esci' per terminare): ").strip()
@@ -133,7 +159,7 @@ def main():
                 print("Inserisci un numero positivo.")
                 continue
                 
-            scansiona_e_genera_intorni_led(H_scelta)
+            scansiona_fascio_rette(H_scelta)
         except ValueError:
             print("[ERRORE] Inserisci un numero intero valido.")
         except KeyboardInterrupt:
@@ -142,3 +168,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
