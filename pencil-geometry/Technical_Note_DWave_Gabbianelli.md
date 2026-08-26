@@ -2,8 +2,8 @@
 
 **Author:** Silvio Gabbianelli  
 **ORCID:** 0009-0007-3329-5270  
-**Framework Reference:** Zenodo Repository ([https://doi.org](https://doi.org))  
-**Computational Engine:** GitHub Repository ([Information-Lattice-Probe/Mainfold12Pencil](https://github.com))  
+**Framework Reference:** Zenodo Repository ([https://doi.org]((https://doi.org/10.5281/zenodo.20621567)))  
+**Computational Engine:** GitHub Repository ([Information-Lattice-Probe/pencil-geometry](https://github.com))  
 **Date:** August 26, 2026  
 
 ---
