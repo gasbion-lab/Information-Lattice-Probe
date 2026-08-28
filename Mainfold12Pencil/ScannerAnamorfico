@@ -4,7 +4,7 @@ import logging
 import matplotlib.pyplot as plt
 
 warnings.filterwarnings("ignore")
-logging.getLogger('matplotlib').setLevel(logging.ERROR)
+logging.getLogger('matplotlib').setLevel(logging.ERRO)
 
 def miller_rabin(n, k=5):
     """Test di primalità di Miller-Rabin."""
